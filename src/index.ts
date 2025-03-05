@@ -5,8 +5,11 @@ import { createServer } from "http";
 import connectDB from "./config/database";
 import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
+const cors = require("cors");
+
 
 const app = express();
+app.use(cors());
 connectDB();
 
 const schema = makeExecutableSchema({
